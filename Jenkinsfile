@@ -3,13 +3,10 @@ pipeline {
     environment {
         SONAR_TOKEN = credentials('sonarqube-token')
     }
-    tools {
-        sonarQubeScanner 'SonarScanner'
-    }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/mhdreza17/UTS-SSDLCC.git'
+                git branch: 'main', url: 'https://github.com/mhdreza17/UTS-SSDLC.git'
             }
         }
         stage('SonarQube Analysis') {
